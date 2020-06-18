@@ -11,7 +11,7 @@ We implemented the DeepSense deep learning framework for the first time and succ
 One can also make it possible on a real-time on-board application.
 
 ### Motivation
-We are releasing our approach's source code for autocalibrating camera and lidar sensors to share with the scientific community and industry with the aim of the collaboration with people around the world to push the boundaries in the field of autonomous driving and intelligent transportation systems. 
+We are releasing our approach's source code for Road Surface Recognition based on accelerometer sensor to share with the scientific community and industry with the aim of the collaboration with people around the world to push the boundaries in the field of intelligent transportation systems. 
 
 ### Experiment results
 <img src="assets/performance.png" width="1600" alt="performance">
