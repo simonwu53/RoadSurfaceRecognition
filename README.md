@@ -53,7 +53,7 @@ python main.py
 ```
 
 ### Licence 
-Our model is released under a [GPLv3.0]() license. 
+Our model is released under a [GPLv3.0](https://github.com/simonwu53/RoadSurfaceRecognition/blob/master/LICENSE) license. 
 
 For a closed-source version of NetCalib for commercial purposes, please contact the authors: [Link]()
 
