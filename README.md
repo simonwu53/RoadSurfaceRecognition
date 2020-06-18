@@ -53,7 +53,7 @@ python main.py
 ```
 
 ### Licence 
-NetCalib is released under a [GPLv3.0](https://github.com/simonwu53/NetCalib-Lidar-Camera-Auto-calibration/blob/master/LICENSE) license. 
+Our model is released under a [GPLv3.0]() license. 
 
 For a closed-source version of NetCalib for commercial purposes, please contact the authors: [Link]()
 
