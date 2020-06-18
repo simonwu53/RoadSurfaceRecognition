@@ -61,6 +61,6 @@ For a closed-source version of NetCalib for commercial purposes, please contact 
 Shan Wu; Amnir Hadachi.
 
 ### Citation 
-If you use our implementation in an academic work, please cite:
+If you use our implementation or our data in an academic work, please cite:
 
 Preprint version of the paper is [here]().
