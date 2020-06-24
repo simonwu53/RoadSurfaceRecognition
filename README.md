@@ -17,7 +17,7 @@ We are releasing our approach's source code for Road Surface Recognition based o
 <img src="assets/performance.png" width="1600" alt="performance">
 
 ### Dataset
-The collected accelerometer data during the experiment can be found [here]().
+The collected accelerometer data can be found [here](https://github.com/simonwu53/RoadSurfaceRecognition/blob/master/data/sensor_data_v2.zip).
 Each file collected is a session and stored in `csv` format with the following fields:
 
 | Field Name | Data Type | Description |
@@ -29,8 +29,6 @@ Each file collected is a session and stored in `csv` format with the following f
 | X-axis | Float | Virtually-oriented accelerometer data for X axis. This accelerometer data is virtually transformed from the phone’s coordinate frame to the world coordinate frame|
 | X-axis | Float | Virtually-oriented accelerometer data for Y axis |
 | X-axis | Float | Virtually-oriented accelerometer data for Z axis |
-| Longitude | Float | WGS84 longitude |
-| Latitude | Float | WGS84 latitude |
 | Road_type | String | One of the "Smooth", "Bumpy" or "Rough" road type |
 
 ### Deployment
