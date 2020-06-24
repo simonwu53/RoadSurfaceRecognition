@@ -211,7 +211,8 @@ def reorganize(raw, cores=mp.cpu_count()):
             key = keys[i]
             file_cache = raw[key]
             # split file for each road type
-            file_cache = separate_road_types(file_cache)
+            # file_cache = separate_road_types(file_cache)
+            file_cache = [file_cache]
 
             if len(file_cache) > 1:
                 print('>w%d: key %s has been splitted(more than 1 road type)' % (worker_id,key))
