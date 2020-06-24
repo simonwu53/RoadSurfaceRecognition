@@ -280,7 +280,7 @@ class DeepSenseTS(BaseModel):
             print('DeepSense model created.')
         return model
 
-    def pre_processing_ds(self, root_dir='../data/sensor/', confirm=True, separate=False,
+    def pre_processing_ds(self, root_dir='../data/extracted/', confirm=True, separate=False,
                           test_split=0.2, normalize=False, standardize=False):
         """
         preprocessing raw data to feed into DeepSense network

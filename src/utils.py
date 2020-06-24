@@ -35,7 +35,7 @@ LOAD DATA AND REORGANIZE
 """
 
 
-def load_data(path_to_dir='../data/sensor/RoadSurfaceDataCollector',
+def load_data(path_to_dir='../data/extracted/RoadSurfaceDataCollector',
               cores=mp.cpu_count(), details=False):
     """
     read the csv sensor files in the folder recursively.
@@ -105,7 +105,7 @@ def load_data(path_to_dir='../data/sensor/RoadSurfaceDataCollector',
     return total
 
 
-def load_folder_recursive(root_dir='../data/sensor/', confirm=False,
+def load_folder_recursive(root_dir='../data/extracted/', confirm=False,
                           return_dup=False, clean=True):
     """
     load dataset from the root directory recursively

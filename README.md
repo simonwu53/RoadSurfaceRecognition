@@ -49,6 +49,7 @@ Before start, make sure the folders in the root directory is organized in the fo
 In the `main.py`, there's steps to run cross validation.
 
 ```shell script
+cd src/
 python main.py
 ```
 
