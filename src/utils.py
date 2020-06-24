@@ -5,29 +5,25 @@ Created by ITS Lab, Institute of Computer Science, University of Tartu
 
 # Libraries
 import numpy as np
+from numpy.lib.recfunctions import repack_fields
 import pickle
 import matplotlib.pyplot as plt
 import matplotlib.ticker as plticker
-from mpl_toolkits.mplot3d import Axes3D
 from os import listdir
 from os.path import join, isfile, basename, dirname
 import multiprocessing as mp
-from scipy.signal import periodogram
-from scipy.signal import stft as scipy_stft
 from scipy.signal import butter, lfilter, filtfilt
 
 
 SAMPLE_DTYPE = np.dtype([('ts', np.float64), ('x_raw', np.float64),
                          ('y_raw', np.float64), ('z_raw', np.float64),
                          ('x', np.float64), ('y', np.float64),
-                         ('z', np.float64), ('lon', np.float64),
-                         ('lat', np.float64), ('road', '<U8')])
+                         ('z', np.float64), ('road', '<U8')])
 
 SAMPLE_DTYPE2 = np.dtype([('ts', np.float64), ('x_raw', np.float64),
                           ('y_raw', np.float64), ('z_raw', np.float64),
                           ('x', np.float64), ('y', np.float64),
-                          ('z', np.float64), ('lon', np.float64),
-                          ('lat', np.float64), ('road', np.int8)])
+                          ('z', np.float64), ('road', np.int8)])
 
 ROAD_TYPE = {'Smooth': 0, 'Bumpy': 1, 'Rough': 2}
 
@@ -609,3 +605,59 @@ def filter_data_freq_lowpass(data, cut=0.2, order=3, sf=10, plot=True):
         plt.title('Low Pass Filter Cutoff Frequency %.2f' % cut)
         plt.show()
     return low_passed
+
+
+"""
+Rectifying Dataset
+"""
+
+
+def update_data(path_to_dir='../data/sensor/RoadSurfaceDataCollector', cores=mp.cpu_count()):
+    new_header = ['timestamp', 'X-raw', 'Y-raw', 'Z-raw', 'X-axis', 'Y-axis', 'Z-axis', 'road_type']
+    # function to remove specific fields in a structured numpy array
+    rmfield = lambda a, *f: a[[n for n in a.dtype.names if n not in f]]
+
+    # read all files in the directory
+    valid_files = [join(path_to_dir, f) for f in listdir(path_to_dir)
+                   if isfile(join(path_to_dir, f)) and f.endswith('csv') and not f.endswith('cords.csv')]
+
+    # distribute tasks
+    avg = len(valid_files) / cores
+    ranges = list((int(i * avg), int((i + 1) * avg)) for i in range(cores))
+
+    def job(worker_id):
+        i_start, i_end = ranges[worker_id]
+
+        # collect data
+        for i in range(i_start, i_end):
+            # load file into Numpy structured array
+            data = np.genfromtxt(valid_files[i], skip_header=1, dtype=SAMPLE_DTYPE, delimiter=',')
+
+            # remove field
+            data_cleaned = repack_fields(rmfield(data, 'lon', 'lat'))
+
+            np.savetxt(valid_files[i], data_cleaned, delimiter=',', header=','.join(new_header),
+                       fmt=','.join(['%d', '%f', '%f', '%f', '%f', '%f', '%f', '%s']))
+        return
+
+    # create processes and execute
+    processes = [mp.Process(target=job, args=(x,)) for x in range(cores)]
+
+    # start processes
+    for p in processes:
+        p.start()
+
+    # wait all processes to stop
+    for p in processes:
+        p.join()
+
+    return
+
+
+def update_data_recursive(root_dir='../data/sensor/'):
+    # find list of folders in the root folder
+    list_dir = find_dir(root_dir, confirm=True)
+    # load data from the folders
+    for folder in list_dir:
+        update_data(folder)
+    return
