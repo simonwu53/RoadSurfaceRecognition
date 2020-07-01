@@ -62,4 +62,13 @@ Shan Wu; Amnir Hadachi.
 ### Citation 
 If you use our implementation or our dataset in an academic work, please cite:
 
+@inproceedings{bishop2000survey,
+  title={Road Surface Recognition Based on DeepSense Neural Network using Accelerometer Data},
+  author={Shan, Wu; Hadachi, Amnir},
+  booktitle={Proceedings of the IEEE Intelligent Vehicles Symposium 2020},
+  pages={xx--xx},
+  year={2020},
+  organization={IEEE}
+}
+
 Preprint version of the paper is [here]().
