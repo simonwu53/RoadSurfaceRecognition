@@ -64,7 +64,7 @@ If you use our implementation or our dataset in an academic work, please cite:
 ```
 @inproceedings{Shan2020Road,
   title={Road Surface Recognition Based on DeepSense Neural Network using Accelerometer Data},
-  author={Shan, Wu; Hadachi, Amnir},
+  author={Shan, Wu and Hadachi, Amnir},
   booktitle={Proceedings of the IEEE Intelligent Vehicles Symposium 2020},
   pages={xx--xx},
   year={2020},
