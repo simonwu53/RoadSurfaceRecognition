@@ -1,6 +1,6 @@
 ## Road Surface Recognition Based on DeepSense Neural Network using Accelerometer Data
 
-This work is published in IV 2020.
+This work is presented and published in IV 2020.
 
 <img src="assets/DeepSense_framework.png" width="700" alt="DeepSense">
 
@@ -66,7 +66,6 @@ If you use our implementation or our dataset in an academic work, please cite:
   title={Road Surface Recognition Based on DeepSense Neural Network using Accelerometer Data},
   author={Shan, Wu and Hadachi, Amnir},
   booktitle={Proceedings of the IEEE Intelligent Vehicles Symposium 2020},
-  pages={xx--xx},
   year={2020},
   organization={IEEE}
 }
