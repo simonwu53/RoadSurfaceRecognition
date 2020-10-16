@@ -54,7 +54,7 @@ python main.py
 ### Licence 
 Our model is released under a [GPLv3.0](https://github.com/simonwu53/RoadSurfaceRecognition/blob/master/LICENSE) license. 
 
-For a closed-source version of the source code for commercial purposes, please contact the authors: [Link]()
+For a closed-source version of the source code for commercial purposes, please contact the authors: Wu](mailto:Shan.Wu@ut.ee) and [Hadachi](mailto:hadachi@ut.ee)
 
 ### Contributors
 Shan Wu; Amnir Hadachi.
