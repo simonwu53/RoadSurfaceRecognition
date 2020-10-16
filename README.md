@@ -70,4 +70,4 @@ If you use our implementation or our dataset in an academic work, please cite:
   organization={IEEE}
 }
 ```
-Preprint version of the paper is [here]().
+Preprint version of the paper is [here](https://www.researchgate.net/publication/344694613_Road_Surface_Recognition_Based_on_DeepSense_Neural_Network_using_Accelerometer_Data).
