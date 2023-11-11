@@ -2,6 +2,9 @@
 
 This work is presented and accepted for publication in IV 2020.
 
+<a href="https://zenodo.org/doi/10.5281/zenodo.10114504"><img src="https://zenodo.org/badge/269648140.svg" alt="DOI"></a>
+<a href="https://doi.org/10.1109/IV47402.2020.9304737"><img src="http://img.shields.io/badge/DOI-10.1109/IV47402.2020.9304737-006699.svg" alt="DOI"></a>
+
 <img src="assets/DeepSense_framework.png" width="700" alt="DeepSense">
 
 In this paper, we proposed the methodology of recognizing "smooth", "bumpy", and "rough" road surfaces by using a unified sensor fusion framework DeepSense [[1]](https://dl.acm.org/doi/pdf/10.1145/3038912.3052577).
@@ -70,4 +73,6 @@ If you use our implementation or our dataset in an academic work, please cite:
   organization={IEEE}
 }
 ```
+
+Publicated in [IEEE Explore](https://doi.org/10.1109/IV47402.2020.9304737).
 Preprint version of the paper is [here](https://www.researchgate.net/publication/344694613_Road_Surface_Recognition_Based_on_DeepSense_Neural_Network_using_Accelerometer_Data).
